@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f6f8;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    #emailid {
+        width: 280px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin-left: 8px;
+        background-color: #0f766e;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    button:hover {
+        background-color: #0b5e57;
+    }
+
+    #email-valid,
+    #email-invalid {
+        width: 350px;
+        margin: 20px auto;
+        padding: 12px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    #email-valid {
+        background-color: #d1fae5;
+    }
+
+    #email-invalid {
+        background-color: #fee2e2;
+    }
+</style>
+</head>
+
+<body>
+    <input type="text" id="emailid">
+    <button onclick="validateEmail()">Validate</button>
+
+    <div style="color: green; display: none;" id="email-valid">
+        CONGRATS YOUR EMAIL IS VALID!!
+    </div>
+    <div style="color: red; display: none;" id="email-invalid">
+        OOPS!! YOUR EMAIL IS INVALID!!!
+    </div>
+
+
+
+    <script>
+        function validateEmail() {
+            const email1 = document.querySelector("#emailid");
+            const emailValidEle = document.querySelector("#email-valid");
+            const emailInvalidEle = document.querySelector("#email-invalid");
+            let email = email1.value;
+
+
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailRegex.test(email)) {
+                emailValidEle.style.display = "block";
+                emailInvalidEle.style.display = "none";
+            }
+            else {
+                emailValidEle.style.display = "none";
+                emailInvalidEle.style.display = "block";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

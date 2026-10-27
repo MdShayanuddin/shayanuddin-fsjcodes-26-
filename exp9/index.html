@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <body style="text-align:center; background-color: yellow;">
+        <h1>Welcome to the colour changer page!</h1>
+        <h2>Hello From Shahajad</h2>
+        <button onclick="changeBackground()">Change Background Colour</button>
+        <script>
+            function changeBackground(){
+                let colors = ["yellow","red","blue","orange","green","pink"];
+                const bodyEle = document.querySelector("body");
+                let randomIndex = Math.floor(Math.random()*colors.length)
+                bodyEle.style.backgroundColor = colors[randomIndex]; 
+            
+            }
+            setInterval(()=>{
+                changeBackground();
+            },1000)   
+            
+        </script>
+
+    </body>
+</html>
